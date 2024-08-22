@@ -62,11 +62,20 @@ def mm(obj,addr):
   return mem[mk(obj,addr)]
 
 #SysApp/namespace/proctab
+mcnt=4 #procCount const
+cnt=mcnt #procedure count
+while cnt:
+  proctab.append([])
+  msize=2 #procMemSize const
+  cnt0=msize #memGroup size
+  while cnt0:
+    proctab[mcnt-cnt].append(mtns[(mcnt-cnt)*msize+msize-cnt0])
+    cnt0-=1
+  pcns.append('') #  //create an empty name
+  cnt-=1
 
 #debug
 print(memtab)
 print(mtns)
-print(mn('sys1'))
-print(ml('sys1'))
-print(mk('sys1',1))
-print(mm('sys1',1))
+print(proctab)
+print(pcns)
