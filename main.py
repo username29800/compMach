@@ -61,7 +61,7 @@ def mk(obj,addr): #memtab_addr  //returns mem addr
 def mm(obj,addr):
   return mem[mk(obj,addr)]
 
-#SysApp/namespace/proctab
+#SysApp/memory/proctab
 mcnt=4 #procCount const
 cnt=mcnt #procedure count
 while cnt:
@@ -73,6 +73,15 @@ while cnt:
     cnt0-=1
   pcns.append('') #  //create an empty name
   cnt-=1
+
+#SysApp/namespace/proctab
+ccnt=4 #cnt const
+cnt=ccnt #cnt var
+nps='proc' #namePrefixString
+while cnt:
+  pcns[pcli+ccnt-cnt]=nps+str(ccnt-cnt)
+  cnt-=1
+pcli+=ccnt
 
 #debug
 print(memtab)
